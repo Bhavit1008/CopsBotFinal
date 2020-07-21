@@ -17,6 +17,7 @@ class DateLocActivity : AppCompatActivity() {
         progress_bar_location.animateProgress(2000,50,60)
 
         btnLocation.setOnClickListener {
+            landmark = edtLocation.text.toString()
             if(landmark != ""){
                 val sharedPreferences = applicationContext!!.getSharedPreferences(sharedName,0)
                 val editor = sharedPreferences.edit()

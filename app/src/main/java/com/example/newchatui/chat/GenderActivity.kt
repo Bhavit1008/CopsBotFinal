@@ -26,7 +26,7 @@ class GenderActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext,it.text ,Toast.LENGTH_SHORT).show()
                 val sharedPreferences = applicationContext!!.getSharedPreferences(sharedName,0)
                 val editor = sharedPreferences.edit()
-                editor.putString("gender",it.toString())
+                editor.putString("gender",it.text.toString())
                 editor.commit()
             }
 

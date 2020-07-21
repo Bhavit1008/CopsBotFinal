@@ -7,9 +7,9 @@ import retrofit2.http.POST
 
 interface RetrofitApi {
     @FormUrlEncoded
-    @POST("/api/user/register")
+    @POST("/api/complaints")
     fun createUser(
-        @Field("autherization") autherization:String,
+        @Field("authorization") authorization:String,
         @Field("victimName") victimName:String,
         @Field("complaint") complaint:String,
         @Field("crimeCategory") crimeCategory:String,

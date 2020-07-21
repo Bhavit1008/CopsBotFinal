@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
-    private const val BASE_URL = "https://demo.herokuapp.com"
+    private const val BASE_URL = "https://copsbot-api.herokuapp.com"
 
     private val okHttpClient = OkHttpClient.Builder()
         .addInterceptor { chain ->

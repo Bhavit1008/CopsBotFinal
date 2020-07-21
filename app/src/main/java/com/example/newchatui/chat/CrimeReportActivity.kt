@@ -28,7 +28,7 @@ class CrimeReportActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext,it.text,Toast.LENGTH_SHORT).show()
                 val sharedPreferences = applicationContext!!.getSharedPreferences(sharedName,0)
                 val editor = sharedPreferences.edit()
-                editor.putString("category",it.toString())
+                editor.putString("category",it.text.toString())
                 editor.commit()
                 var i = Intent(applicationContext, DescriptionActivity::class.java)
                 startActivity(i)
