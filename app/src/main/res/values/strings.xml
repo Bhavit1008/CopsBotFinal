@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NewChatUI</string>
+
+    <string-array name="Fade_In">
+        <item>CopsBot</item>
+        <item>At your Service</item>
+    </string-array>
+</resources>
