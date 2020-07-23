@@ -1,9 +1,12 @@
 package com.example.newchatui.api
 
 import com.example.newchatui.model.ComplaintResponse
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import com.example.newchatui.model.ImageResponse
+import okhttp3.MultipartBody
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.http.*
+
 
 interface RetrofitApi {
     @FormUrlEncoded
@@ -21,5 +24,16 @@ interface RetrofitApi {
         @Field("dateOfIncident") dateOfIncident:String,
         @Field("timeOfIncident") timeOfIncident:String
         ): retrofit2.Call<ComplaintResponse>
+
+
+    @FormUrlEncoded
+    @POST("/api/incident")
+    fun postImage(
+        @Field("authorization") authorization:String,
+        @Field("evidence") image:String,
+        @Field("incidentDesc") desc:String,
+        @Field("iLatitude") latitude:String,
+        @Field("iLongitude") longitude:String
+    ): retrofit2.Call<ImageResponse>
 
 }

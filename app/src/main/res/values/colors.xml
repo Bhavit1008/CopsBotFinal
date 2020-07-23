@@ -3,4 +3,5 @@
     <color name="colorPrimary">#008000</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#008000</color>
+    <color name="recorder_bg">#F4511E</color>
 </resources>

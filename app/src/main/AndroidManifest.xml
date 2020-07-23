@@ -3,6 +3,15 @@
     package="com.example.newchatui">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +20,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".auth.RegistrationActivity"></activity>
+        <activity android:name=".features.ReportIncidentActivity"></activity>
+        <activity android:name=".features.voiceNote.VoiceNoteActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".auth.RegistrationActivity" />
+        <activity android:name=".chat.MainActivity" />
         <activity android:name=".auth.LoginActivity" />
         <activity android:name=".chat.IntroActivity" />
         <activity android:name=".chat.DateTimePickerActivity" />
@@ -21,13 +39,6 @@
         <activity android:name=".chat.CrimeReportActivity" />
         <activity android:name=".chat.GenderActivity" />
         <activity android:name=".chat.AgeActivity" />
-        <activity android:name=".chat.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

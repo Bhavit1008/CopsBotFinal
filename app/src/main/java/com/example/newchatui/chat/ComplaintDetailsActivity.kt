@@ -3,6 +3,7 @@ package com.example.newchatui.chat
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.example.newchatui.R
 import com.example.newchatui.api.RetrofitClient
@@ -72,6 +73,7 @@ class ComplaintDetailsActivity : AppCompatActivity() {
                         response.message().toString(),
                         Toast.LENGTH_SHORT
                     ).show()
+                    Log.d("api response","Complaint successfully registered")
                 }
 
             })
