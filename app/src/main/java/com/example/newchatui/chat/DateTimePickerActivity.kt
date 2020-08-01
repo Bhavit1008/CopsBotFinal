@@ -6,8 +6,11 @@ import android.os.Bundle
 
 import android.widget.DatePicker
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.newchatui.R
+import kotlinx.android.synthetic.main.activity_age.*
 import kotlinx.android.synthetic.main.activity_date_time_picker.*
+import kotlinx.android.synthetic.main.activity_date_time_picker.botLogo
 import java.util.*
 
 class DateTimePickerActivity : AppCompatActivity(){
@@ -19,6 +22,7 @@ class DateTimePickerActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_date_time_picker)
         progress_bar_date.animateProgress(2000,60,90)
+        Glide.with(this).asGif().load(R.raw.logo).into(botLogo)
 
             val datePicker = findViewById<DatePicker>(R.id.datePicker)
             val today = Calendar.getInstance()
@@ -51,5 +55,10 @@ class DateTimePickerActivity : AppCompatActivity(){
 
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
+    }
 
 }

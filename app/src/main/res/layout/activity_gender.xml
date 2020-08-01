@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="#fff">
 
 
     <RelativeLayout
@@ -27,7 +28,7 @@
             android:id="@+id/txtlogo"
             />
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:layout_marginLeft="4dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/round_edt"
@@ -35,18 +36,16 @@
             android:layout_width="80dp"
             android:layout_above="@+id/txtName"
             android:layout_height="80dp"
-            app:civ_shadow="true"
-            app:civ_shadow_radius="10dp"
-            app:civ_shadow_color="#fff"
-            android:src="@drawable/police"
             android:id="@+id/botLogo"
             />
 
         <TextView
             android:layout_above="@+id/chipGroup"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
+            android:padding="16dp"
+            android:background="@drawable/bot_bg_bubble"
             android:layout_height="wrap_content"
-            android:text="Select Your Gender."
+            android:text="@string/genderTextChat"
             android:textSize="24sp"
             android:layout_marginBottom="32dp"
             android:id="@+id/txtName"/>
@@ -70,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/chipYellow"
-                android:text="Male"
+                android:text="@string/maleGenderChatBtn"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 app:chipBackgroundColor="#fff"
                 app:chipStrokeWidth="1dp"
@@ -81,7 +80,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/chipPink"
-                android:text="Female"
+                android:text="@string/femaleGenderChatBtn"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="#fff"
+                app:chipStrokeWidth="1dp"
+                android:textColor="@color/colorPrimary"
+                app:chipStrokeColor="@color/colorPrimary"
+                />
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chipGold"
+                android:text="@string/otherGenderChatBtn"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 app:chipBackgroundColor="#fff"
                 app:chipStrokeWidth="1dp"

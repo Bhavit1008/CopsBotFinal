@@ -4,9 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.newchatui.R
 import com.google.android.material.chip.Chip
+import kotlinx.android.synthetic.main.activity_age.*
 import kotlinx.android.synthetic.main.activity_crime_report.*
+import kotlinx.android.synthetic.main.activity_crime_report.botLogo
 
 class CrimeReportActivity : AppCompatActivity() {
 
@@ -18,6 +21,7 @@ class CrimeReportActivity : AppCompatActivity() {
         setContentView(R.layout.activity_crime_report)
 
         progress_bar_category.animateProgress(2000,30,40)
+        Glide.with(this).asGif().load(R.raw.logo).into(botLogo)
 
         chipGroupCrime.setOnCheckedChangeListener { group, checkedId: Int ->
             // Get the checked chip instance from chip group
@@ -40,6 +44,12 @@ class CrimeReportActivity : AppCompatActivity() {
             }
         }
 
+
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
     }
 }

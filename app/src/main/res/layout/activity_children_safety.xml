@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="8dp"
+    android:layout_height="match_parent"
+    tools:context=".chat.awarness.ChildrenSafety">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/round_edt"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:civ_shadow="true"
+        app:civ_shadow_radius="10dp"
+        app:civ_shadow_color="#fff"
+        android:src="@drawable/police"
+        android:id="@+id/botLogo"
+        android:layout_above="@+id/txtWomenSafety"
+        />
+
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtWomenSafety"
+        android:background="@drawable/bot_bg_bubble"
+        android:padding="16dp"
+        android:text="1. Encourage your children to use the buddy system – walk and play with friends or classmates.\n2. Never talk to strangers (unless they’re designated “safe,” like police)\n3. Help your children understand that no one, not even a relative or authority figure, is allowed to touch them in a way that makes them uncomfortable.\n 4. Help your child learn their full name, phone number (including area code), and address (including city and state).\n 5. Teach children how to call 911 (and when it’s appropriate).\n 6. Designate a safe spot in your neighborhood to go to in case of emergency."
+        android:layout_above="@+id/chipEmergencyChildren"
+        />
+
+    <com.google.android.material.chip.Chip
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/dots"
+        android:text="Emergency Call"
+        android:layout_marginTop="8dp"
+        app:chipBackgroundColor="#fff"
+        app:chipStrokeWidth="1dp"
+        android:textColor="@color/colorPrimary"
+        app:chipStrokeColor="@color/colorPrimary"
+        android:id="@+id/chipEmergencyChildren"/>
+
+    <com.eyalbira.loadingdots.LoadingDots
+        android:id="@+id/dots"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="4dp"
+        app:LoadingDots_dots_color="@color/colorPrimary"
+        app:LoadingDots_auto_play="true"
+        app:LoadingDots_dots_count="4"
+        app:LoadingDots_loop_duration="800"
+        app:LoadingDots_loop_start_delay="100"
+        app:LoadingDots_jump_duration="200"
+        app:LoadingDots_jump_height="4dp"
+        app:LoadingDots_dots_size="2dp"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>

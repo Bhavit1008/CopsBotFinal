@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="#fff">
 
 
     <RelativeLayout
@@ -15,25 +16,20 @@
         android:padding="8dp"
         tools:context=".chat.MainActivity">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:layout_marginLeft="4dp"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/round_edt"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="80dp"
             android:layout_above="@+id/txtCrimeCategory"
             android:layout_height="80dp"
-            app:civ_shadow="true"
-            app:civ_shadow_radius="10dp"
-            app:civ_shadow_color="#fff"
-            android:src="@drawable/police"
             android:id="@+id/botLogo"
             />
 
         <TextView
            android:layout_width="250dp"
            android:layout_height="wrap_content"
-           android:text="Select the category under which you want to register the complaint."
+           android:text="@string/crimeCategoryTextChat"
            android:id="@+id/txtCrimeCategory"
            android:textSize="24sp"
            android:layout_marginBottom="32dp"
@@ -46,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/chipGroupCrime"
-            android:background="#fafff7"
+            android:background="#fff"
             app:singleLine="false"
             app:singleSelection="true"
             android:layout_alignParentRight="true"
@@ -58,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/chipRed"
-                android:text="Theft"
+                android:text="@string/theftCategory"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 app:chipBackgroundColor="#fff"
                 app:chipStrokeWidth="1dp"
@@ -69,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/chipGreen"
-                android:text="Murder"
+                android:text="@string/murderCategory"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 app:chipBackgroundColor="#fff"
                 app:chipStrokeWidth="1dp"
@@ -80,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/chipBlue"
-                android:text="Molestation"
+                android:text="@string/molestationCategory"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 app:chipBackgroundColor="#fff"
                 app:chipStrokeWidth="1dp"
@@ -91,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/chipYellow"
-                android:text="Domestic Violence"
+                android:text="@string/domestic_violenceCategory"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 app:chipBackgroundColor="#fff"
                 app:chipStrokeWidth="1dp"
@@ -102,7 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/chipPink"
-                android:text="Cyber Crime"
+                android:text="@string/cyber_crimeCategory"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 app:chipBackgroundColor="#fff"
                 app:chipStrokeWidth="1dp"
@@ -110,6 +106,86 @@
                 app:chipStrokeColor="@color/colorPrimary"
                 android:layout_marginBottom="32dp"
                 />
+
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chip1"
+                android:text="@string/hit_and_runCategory"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="#fff"
+                app:chipStrokeWidth="1dp"
+                android:textColor="@color/colorPrimary"
+                app:chipStrokeColor="@color/colorPrimary"
+                android:layout_marginBottom="32dp"
+                />
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chip2"
+                android:text="@string/acid_attackCategory"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="#fff"
+                app:chipStrokeWidth="1dp"
+                android:textColor="@color/colorPrimary"
+                app:chipStrokeColor="@color/colorPrimary"
+                android:layout_marginBottom="32dp"
+                />
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chip3"
+                android:text="@string/sexual_harassmentCategory"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="#fff"
+                app:chipStrokeWidth="1dp"
+                android:textColor="@color/colorPrimary"
+                app:chipStrokeColor="@color/colorPrimary"
+                android:layout_marginBottom="32dp"
+                />
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chip4"
+                android:text="@string/kidnappCategory"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="#fff"
+                app:chipStrokeWidth="1dp"
+                android:textColor="@color/colorPrimary"
+                app:chipStrokeColor="@color/colorPrimary"
+                android:layout_marginBottom="32dp"
+                />
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chip5"
+                android:text="@string/rapeCategory"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="#fff"
+                app:chipStrokeWidth="1dp"
+                android:textColor="@color/colorPrimary"
+                app:chipStrokeColor="@color/colorPrimary"
+                android:layout_marginBottom="32dp"
+                />
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chipGold"
+                android:text="@string/otherGenderChatBtn"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="#fff"
+                app:chipStrokeWidth="1dp"
+                android:textColor="@color/colorPrimary"
+                app:chipStrokeColor="@color/colorPrimary"
+                android:layout_marginBottom="32dp"
+                />
+
+
         </com.google.android.material.chip.ChipGroup>
 
 

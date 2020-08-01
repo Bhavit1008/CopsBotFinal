@@ -19,10 +19,21 @@
         android:layout_alignParentTop="true"/>
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:src="@drawable/check"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:id="@+id/successImage"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/complaintsdetailChat"
+        android:textSize="16sp"
+        android:layout_below="@+id/successImage"
+        android:layout_centerHorizontal="true"
+        android:textColor="#00CC00"
+        android:layout_marginTop="4dp"/>
 
 </RelativeLayout>

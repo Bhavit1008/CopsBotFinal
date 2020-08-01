@@ -4,8 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.newchatui.R
+import kotlinx.android.synthetic.main.activity_age.*
 import kotlinx.android.synthetic.main.activity_description.*
+import kotlinx.android.synthetic.main.activity_description.botLogo
 
 class DescriptionActivity : AppCompatActivity() {
 
@@ -17,6 +20,7 @@ class DescriptionActivity : AppCompatActivity() {
 
 
         progress_bar_description.animateProgress(2000,40,50)
+        Glide.with(this).asGif().load(R.raw.logo).into(botLogo)
 
         btnDescription.setOnClickListener {
             description = edtDescription.text.toString()
@@ -38,5 +42,10 @@ class DescriptionActivity : AppCompatActivity() {
             }
 
         }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
     }
 }

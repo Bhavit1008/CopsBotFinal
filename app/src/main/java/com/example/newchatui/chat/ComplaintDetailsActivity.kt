@@ -1,6 +1,7 @@
 package com.example.newchatui.chat
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,7 @@ import android.widget.Toast
 import com.example.newchatui.R
 import com.example.newchatui.api.RetrofitClient
 import com.example.newchatui.model.ComplaintResponse
+import com.example.newchatui.ui.DashBoardActivity
 import kotlinx.android.synthetic.main.activity_complaint_details.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -79,6 +81,13 @@ class ComplaintDetailsActivity : AppCompatActivity() {
             })
 
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this,DashBoardActivity::class.java)
+        startActivity(intent)
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 }
 

@@ -9,16 +9,22 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.newchatui.R
+import com.example.newchatui.api.RetrofitClient
+import com.example.newchatui.model.ImageResponse
 import com.google.android.gms.common.util.IOUtils.toByteArray
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
 import kotlinx.android.synthetic.main.activity_voice_note.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.File
 import java.io.IOException
 import java.io.InputStream
@@ -125,6 +131,9 @@ class VoiceNoteActivity : AppCompatActivity() {
                     mReference.downloadUrl.addOnCompleteListener {
                         val url = it.result.toString()
                         Toast.makeText(applicationContext,url,Toast.LENGTH_SHORT).show()
+                        if(url!=""){
+                            uploadVoiceNote(url)
+                        }
                     }
                 }
             }catch (e: Exception) {
@@ -135,5 +144,33 @@ class VoiceNoteActivity : AppCompatActivity() {
         else{
             Toast.makeText(this, "You are not recording right now!", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun uploadVoiceNote(url: String) {
+        RetrofitClient.instance.postVoiceNote(
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoie1wiX2lkXCI6XCI1ZjBhOWIyYzEwODJkNTM5YmM3YWE0YjdcIixcIm5hbWVcIjpcIkJoYXZpdCBLYW50aGFsaWFcIixcInBob25lTnVtYmVyXCI6NzU5NzkxNzAwNyxcIklNRUlcIjoxNjQ2MTU0LFwibGF0aXR1ZGVcIjoyMy40MzI1MjEsXCJsb25naXR1ZGVcIjo3My40MzI1MTUsXCJwYXNzd29yZFwiOlwiJDJhJDEwJGZ1WTJRODZTUjQwODQzVTZ5ZHVRbk9MNGtzT3lNT2NDRzhLVjAzd2hJM1cwZVUyNTNHQkZ1XCIsXCJjcmVhdGVkQXRcIjpcIjIwMjAtMDctMTJUMDU6MTA6MDQuMjI3WlwiLFwidXBkYXRlZEF0XCI6XCIyMDIwLTA3LTEyVDA1OjEwOjA0LjIyN1pcIixcIl9fdlwiOjB9IiwiaWF0IjoxNTk0NTMwNjUwfQ.2L12RwLY8d3l962WqWiGpBuJ2Qc14nVB1bDXD0uD23E",
+            url,
+            "24.48856",
+            "75.258412"
+        ).enqueue(object : Callback<ImageResponse> {
+            override fun onFailure(call: Call<ImageResponse>, t: Throwable) {
+                Toast.makeText(applicationContext, t.message.toString(), Toast.LENGTH_SHORT)
+                    .show()
+            }
+
+            override fun onResponse(
+                call: Call<ImageResponse>,
+                response: Response<ImageResponse>
+            ) {
+                Toast.makeText(
+                    applicationContext,
+                    response.message().toString(),
+                    Toast.LENGTH_SHORT
+                ).show()
+                Log.d("api response","Complaint successfully registered")
+            }
+
+        })
+
     }
 }

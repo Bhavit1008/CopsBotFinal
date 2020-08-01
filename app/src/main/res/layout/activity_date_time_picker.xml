@@ -13,30 +13,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="8dp"
+        android:background="#fff"
         tools:context=".chat.MainActivity">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:layout_marginLeft="4dp"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/round_edt"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="80dp"
             android:layout_above="@+id/txtName"
             android:layout_height="80dp"
-            app:civ_shadow="true"
-            app:civ_shadow_radius="10dp"
-            app:civ_shadow_color="#fff"
-            android:src="@drawable/police"
             android:id="@+id/botLogo"
+            android:layout_below="@+id/datePicker"
             />
 
         <TextView
+            android:padding="16dp"
+            android:background="@drawable/bot_bg_bubble"
             android:layout_above="@+id/btnDate"
             android:layout_marginTop="8dp"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="Select Date of incident."
-            android:textSize="24sp"
+            android:text="@string/dateTextChat"
+            android:textSize="20sp"
             android:layout_marginBottom="32dp"
             android:id="@+id/txtName"/>
 
@@ -44,7 +43,7 @@
         <com.google.android.material.chip.Chip
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date and Time"
+            android:text="@string/sendBtnChat"
             android:layout_marginBottom="16dp"
             android:id="@+id/btnDate"
             android:layout_marginTop="8dp"

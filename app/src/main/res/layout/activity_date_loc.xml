@@ -6,6 +6,7 @@
     android:fillViewport="true">
 
 
+
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,20 +14,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="8dp"
+        android:background="#fff"
         tools:context=".chat.MainActivity">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:map="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mapLocationChat"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            map:cameraZoom="1"
+            tools:context=".features.maps.MapsComplaint" />
+
+
+        <ImageView
             android:layout_marginLeft="4dp"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/round_edt"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="80dp"
             android:layout_above="@+id/txtName"
             android:layout_height="80dp"
-            app:civ_shadow="true"
-            app:civ_shadow_radius="10dp"
-            app:civ_shadow_color="#fff"
-            android:src="@drawable/police"
+            android:layout_below="@+id/mapLocationChat"
             android:id="@+id/botLogo"
             />
 
@@ -34,8 +43,10 @@
             android:layout_above="@+id/edtLocation"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="Select the Place of the incident."
+            android:text="@string/landmarkTextChat"
             android:textSize="24sp"
+            android:padding="16dp"
+            android:background="@drawable/bot_bg_bubble"
             android:id="@+id/txtName"/>
 
         <EditText
@@ -54,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnLocation"
-            android:text="send"
+            android:text="@string/sendBtnChat"
             android:layout_alignParentRight="true"
             android:layout_marginBottom="32dp"
             android:layout_alignParentBottom="true"

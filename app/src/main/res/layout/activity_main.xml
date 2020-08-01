@@ -13,6 +13,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
+    android:background="#fff"
     tools:context=".chat.MainActivity">
 
 
@@ -43,18 +44,14 @@
 
 
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_marginLeft="4dp"
-        android:layout_marginBottom="16dp"
+    <ImageView
         android:background="@drawable/round_edt"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="8dp"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="80dp"
         android:layout_above="@+id/txtName"
         android:layout_height="80dp"
-        app:civ_shadow="true"
-        app:civ_shadow_radius="10dp"
-        app:civ_shadow_color="#fff"
-        android:src="@drawable/police"
         android:id="@+id/botLogo"
         />
 
@@ -63,10 +60,12 @@
         android:layout_marginLeft="4dp"
         android:layout_marginBottom="32dp"
         android:layout_above="@+id/textFieldName"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="What’s your name?"
+        android:text="@string/nameTextChat"
         android:textSize="24sp"
+        android:padding="16dp"
+        android:background="@drawable/bot_bg_bubble"
         android:id="@+id/txtName"/>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -81,20 +80,22 @@
         app:boxStrokeColor="@color/colorPrimary"
         app:errorEnabled="true"
         android:layout_alignParentRight="true"
+        android:visibility="invisible"
         >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtName"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"/>
+            android:inputType="textPersonName"
+            android:visibility="invisible"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.chip.Chip
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnName"
-        android:text="send"
+        android:text="@string/sendBtnChat"
         android:layout_alignParentRight="true"
         app:chipBackgroundColor="#fff"
         app:chipStrokeWidth="1dp"
@@ -102,6 +103,7 @@
         android:textColor="@color/colorPrimary"
         app:chipStrokeColor="@color/colorPrimary"
         android:layout_marginBottom="16dp"
+        android:visibility="invisible"
         />
 
     <com.eyalbira.loadingdots.LoadingDots
