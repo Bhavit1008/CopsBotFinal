@@ -14,7 +14,7 @@
     android:layout_height="match_parent"
     android:padding="8dp"
     android:background="#fff"
-    tools:context=".chat.MainActivity">
+    tools:context=".ui.chat.MainActivity">
 
 
 <com.tomer.fadingtextview.FadingTextView
@@ -75,7 +75,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:hint="Full Name"
+        android:hint="@string/full_nameMainActivityEdt"
         android:textColorHint="@color/colorPrimary"
         app:boxStrokeColor="@color/colorPrimary"
         app:errorEnabled="true"

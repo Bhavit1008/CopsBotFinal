@@ -1,4 +1,4 @@
-package com.example.newchatui.chat.awarness
+package com.example.newchatui.ui.chat.awarness
 
 import android.content.Intent
 import android.net.Uri
@@ -6,17 +6,17 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isInvisible
+import com.bumptech.glide.Glide
 import com.example.newchatui.R
 import com.google.android.material.chip.Chip
 import kotlinx.android.synthetic.main.activity_cyber_crime_category.*
-import kotlinx.android.synthetic.main.activity_gender.*
 
 class CyberCrimeCategory : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cyber_crime_category)
+        Glide.with(this).asGif().load(R.raw.logo).into(botLogo)
 
         chipGroupCyberCrimeCategory.setOnCheckedChangeListener { group, checkedId: Int ->
             // Get the checked chip instance from chip group

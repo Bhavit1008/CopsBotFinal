@@ -1,4 +1,4 @@
-package com.example.newchatui.chat
+package com.example.newchatui.ui.chat
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +8,6 @@ import android.widget.DatePicker
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.newchatui.R
-import kotlinx.android.synthetic.main.activity_age.*
 import kotlinx.android.synthetic.main.activity_date_time_picker.*
 import kotlinx.android.synthetic.main.activity_date_time_picker.botLogo
 import java.util.*

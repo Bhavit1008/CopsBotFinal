@@ -1,20 +1,24 @@
-package com.example.newchatui.chat.awarness
+package com.example.newchatui.ui.chat.awarness
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.newchatui.R
-import com.example.newchatui.chat.DescriptionActivity
 import com.google.android.material.chip.Chip
-import kotlinx.android.synthetic.main.activity_crime_report.*
 import kotlinx.android.synthetic.main.activity_main_awarness.*
 
 class MainAwarness : AppCompatActivity() {
 
+    var response :String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_awarness)
+        Glide.with(this).asGif().load(R.raw.logo).into(botLogo)
+
+        var strUser: String = intent.getStringExtra("sug") // 2
+        botSug.text = "I suggest you to tap on " + " " + strUser
 
         chipGroupCrimeAwarness.setOnCheckedChangeListener { group, checkedId: Int ->
             // Get the checked chip instance from chip group

@@ -30,15 +30,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".chat.awarness.MainAwarness"></activity>
+        <activity android:name="com.example.newchatui.ui.chat.awarness.CrimePrediction"></activity>
+        <activity android:name="com.example.newchatui.ui.chat.awarness.MainAwarness" />
         <activity android:name=".features.statusTracking.StatusTrackingActivity" />
-        <activity android:name=".chat.awarness.OtherActiviy" />
-        <activity android:name=".chat.awarness.RoadAccident" />
-        <activity android:name=".chat.awarness.ChildrenSafety" />
-        <activity android:name=".chat.awarness.WomenSafety" />
-        <activity android:name=".chat.awarness.CyberCrimeSafetyMeasures" />
-        <activity android:name=".chat.MainActivity" />
-        <activity android:name=".chat.awarness.CyberCrimeCategory" />
+        <activity android:name="com.example.newchatui.ui.chat.awarness.OtherActiviy" />
+        <activity android:name="com.example.newchatui.ui.chat.awarness.RoadAccident" />
+        <activity android:name="com.example.newchatui.ui.chat.awarness.ChildrenSafety" />
+        <activity android:name="com.example.newchatui.ui.chat.awarness.WomenSafety" />
+        <activity android:name="com.example.newchatui.ui.chat.awarness.CyberCrimeSafetyMeasures" />
+        <activity android:name="com.example.newchatui.ui.chat.MainActivity" />
+        <activity android:name="com.example.newchatui.ui.chat.awarness.CyberCrimeCategory" />
         <activity android:name=".features.awarnessPages.TwitterActivity" />
         <activity android:name=".features.awarnessPages.RoadSafetyActivity" />
         <activity android:name=".features.maps.ComplaintActivity" />
@@ -50,7 +51,7 @@
 
         <activity android:name=".features.voiceNote.VoiceNoteActivity" />
         <activity android:name=".features.ReportIncidentActivity" />
-        <activity android:name=".ui.DashBoardActivity">
+        <activity android:name=".auth.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -59,15 +60,37 @@
         </activity>
         <activity android:name=".auth.RegistrationActivity" />
         <activity android:name=".features.maps.MapsComplaint" />
-        <activity android:name=".auth.LoginActivity" />
-        <activity android:name=".chat.IntroActivity" />
-        <activity android:name=".chat.DateTimePickerActivity" />
-        <activity android:name=".chat.ComplaintDetailsActivity" />
-        <activity android:name=".chat.DescriptionActivity" />
-        <activity android:name=".chat.DateLocActivity" />
-        <activity android:name=".chat.CrimeReportActivity" />
-        <activity android:name=".chat.GenderActivity" />
-        <activity android:name=".chat.AgeActivity" />
+        <activity android:name=".ui.DashBoardActivity" />
+        <activity android:name="com.example.newchatui.ui.chat.IntroActivity" />
+        <activity android:name="com.example.newchatui.ui.chat.DateTimePickerActivity" />
+        <activity android:name="com.example.newchatui.ui.chat.ComplaintDetailsActivity" />
+        <activity android:name="com.example.newchatui.ui.chat.DescriptionActivity" />
+        <activity android:name="com.example.newchatui.ui.chat.DateLocActivity" />
+        <activity android:name="com.example.newchatui.ui.chat.CrimeReportActivity" />
+        <activity android:name="com.example.newchatui.ui.chat.GenderActivity" />
+        <activity android:name="com.example.newchatui.ui.chat.AgeActivity" />
+
+
+
+        <service
+            android:name=".firebaseServices.MyFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".firebaseServices.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+
+
     </application>
+
+
+
 
 </manifest>

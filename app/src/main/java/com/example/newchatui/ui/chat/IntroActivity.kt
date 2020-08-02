@@ -1,14 +1,16 @@
-package com.example.newchatui.chat
+package com.example.newchatui.ui.chat
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.newchatui.R
-import com.example.newchatui.chat.awarness.MainAwarness
+import com.example.newchatui.ui.chat.awarness.CrimePrediction
 import kotlinx.android.synthetic.main.activity_intro.*
 import java.util.*
 
@@ -16,9 +18,20 @@ import java.util.*
 class IntroActivity : AppCompatActivity() {
 
 
+    var sharedName : String = "sharedPreference"
+    var language : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setLocale("hi")
+        val sharedPreferences = applicationContext!!.getSharedPreferences(sharedName, Context.MODE_PRIVATE)
+        if(sharedPreferences!=null){
+            language = sharedPreferences.getString("language", "name")
+            if(language == "Hindi")
+                language = "hi"
+            if(language == "English")
+                language = "en"
+        }
+        Toast.makeText(applicationContext,language, Toast.LENGTH_SHORT).show()
+        setLocale(language)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intro)
         Glide.with(this).asGif().load(R.raw.logo).into(botLogo)
@@ -40,7 +53,7 @@ class IntroActivity : AppCompatActivity() {
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
         crimeAwareChip.setOnClickListener {
-            val intent = Intent(this,MainAwarness::class.java)
+            val intent = Intent(this,CrimePrediction::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }

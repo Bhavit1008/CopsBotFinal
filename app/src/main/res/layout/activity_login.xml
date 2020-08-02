@@ -21,7 +21,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/passwordLogin"
             android:layout_marginTop="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
@@ -47,7 +47,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="@string/phone_numberLogin"
             android:textColorHint="@color/colorAccent"
             app:boxStrokeColor="@color/colorAccent"
             app:errorEnabled="true"
@@ -83,6 +83,25 @@
             android:layout_centerHorizontal="true"
             android:textColor="@color/colorAccent"/>
 
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/registration_activity_bypass"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            />
+
+        <TextView
+            android:id="@+id/complaintA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complaint Anonymously"
+            android:layout_below="@+id/spinner"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"/>
+
     </RelativeLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

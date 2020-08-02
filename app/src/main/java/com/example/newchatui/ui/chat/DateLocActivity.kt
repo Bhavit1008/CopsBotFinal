@@ -1,4 +1,4 @@
-package com.example.newchatui.chat
+package com.example.newchatui.ui.chat
 
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -16,7 +16,6 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import kotlinx.android.synthetic.main.activity_age.*
 import kotlinx.android.synthetic.main.activity_date_loc.*
 import kotlinx.android.synthetic.main.activity_date_loc.botLogo
 

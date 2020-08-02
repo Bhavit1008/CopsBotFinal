@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:padding="8dp"
         android:background="#fff"
-        tools:context=".chat.IntroActivity">
+        tools:context=".ui.chat.IntroActivity">
 
         <com.tomer.fadingtextview.FadingTextView
             android:layout_width="wrap_content"
@@ -68,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/crimeRegChip"
-                android:text="Crime Registraion"
+                android:text="@string/crime_registraionIntroChip"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 app:chipBackgroundColor="#fff"
                 app:chipStrokeWidth="1dp"
@@ -79,7 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/crimeAwareChip"
-                android:text="Crime Awarness"
+                android:text="@string/crime_awarnessIntroChip"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 app:chipBackgroundColor="#fff"
                 app:chipStrokeWidth="1dp"

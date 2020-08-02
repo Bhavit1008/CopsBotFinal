@@ -27,7 +27,6 @@
     <string name="cyber_crimeCategory">Cyber Crime</string>
     <string name="hit_and_runCategory">Hit and Run</string>
     <string name="acid_attackCategory">Acid Attack</string>
-    <string name="sexual_harassmentCategory">Sexual Harassment</string>
     <string name="kidnappCategory">Kidnapp</string>
     <string name="rapeCategory">Rape</string>
     <string name="copsbotHeadingDashboard">CopsBot</string>
@@ -39,5 +38,20 @@
     <string name="twitter_feedsDashboard">Twitter Feeds</string>
     <string name="nearby_police_stationsDashboard">Nearby Police Stations</string>
 
+    <string name="selected_item" translatable="false">Selected item:</string>
+    <string name="sexual_harassmentCategory">sexual_harassmentCategory</string>
+    <string name="crime_registraionIntroChip">Crime Registraion</string>
+    <string name="crime_awarnessIntroChip">Crime Awarness</string>
+    <string name="full_nameMainActivityEdt">Full Name</string>
+    <string name="ageAgeEdt">Age</string>
+    <string name="descriptionDescriptionEdt">Description</string>
+    <string name="enter_locationDateLocEdt">Enter Location</string>
+    <string name="phone_numberLogin">Phone Number</string>
+    <string name="passwordLogin">Password</string>
+    <string name="speek">speak</string>
 
+    <string-array name="Languages">
+        <item>English</item>
+        <item>Hindi</item>
+    </string-array>
 </resources>

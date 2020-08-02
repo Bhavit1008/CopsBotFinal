@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fillViewport="true"
-    android:background="#fff">
+    android:fillViewport="true">
 
 
     <RelativeLayout
@@ -14,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="8dp"
-        tools:context=".ui.chat.MainActivity">
+        android:background="#fff"
+        tools:context=".ui.chat.awarness.CrimePrediction">
 
         <com.tomer.fadingtextview.FadingTextView
             android:layout_width="wrap_content"
@@ -28,10 +28,10 @@
             android:id="@+id/txtlogo"
             />
 
+
         <ImageView
             android:layout_marginLeft="4dp"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/round_edt"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="80dp"
             android:layout_above="@+id/txtName"
@@ -40,71 +40,54 @@
             />
 
         <TextView
-            android:layout_above="@+id/chipGroup"
+            android:layout_above="@+id/textFieldAge"
             android:layout_width="250dp"
             android:padding="16dp"
-            android:background="@drawable/bot_bg_bubble"
             android:layout_height="wrap_content"
-            android:text="@string/genderTextChat"
-            android:textSize="24sp"
+            android:text="please enter your query?"
             android:layout_marginBottom="32dp"
+            android:background="@drawable/bot_bg_bubble"
+            android:textSize="24sp"
             android:id="@+id/txtName"/>
 
-
-        <com.google.android.material.chip.ChipGroup
-            android:layout_marginRight="4dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="16dp"
-            android:layout_above="@+id/dots"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textFieldAge"
+            android:layout_above="@+id/btnQuery"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:id="@+id/chipGroup"
-            android:background="#fafff7"
-            app:singleLine="false"
-            app:singleSelection="true"
+            android:hint="Enter Query"
+            android:textColorHint="@color/colorPrimary"
+            app:boxStrokeColor="@color/colorPrimary"
+            app:errorEnabled="true"
+            android:layout_alignParentRight="true"
             >
 
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtQuery"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/chipYellow"
-                android:text="@string/maleGenderChatBtn"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                app:chipBackgroundColor="#fff"
-                app:chipStrokeWidth="1dp"
-                android:textColor="@color/colorPrimary"
-                app:chipStrokeColor="@color/colorPrimary"
+                android:inputType="text"
                 />
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/chipPink"
-                android:text="@string/femaleGenderChatBtn"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                app:chipBackgroundColor="#fff"
-                app:chipStrokeWidth="1dp"
-                android:textColor="@color/colorPrimary"
-                app:chipStrokeColor="@color/colorPrimary"
-                />
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/chipGold"
-                android:text="@string/otherGenderChatBtn"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                app:chipBackgroundColor="#fff"
-                app:chipStrokeWidth="1dp"
-                android:textColor="@color/colorPrimary"
-                app:chipStrokeColor="@color/colorPrimary"
-                />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-        </com.google.android.material.chip.ChipGroup>
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sendBtnChat"
+            android:layout_marginBottom="16dp"
+            android:id="@+id/btnQuery"
+            android:layout_alignParentRight="true"
+            app:chipBackgroundColor="#fff"
+            app:chipStrokeWidth="1dp"
+            android:layout_above="@+id/dots"
+            android:textColor="@color/colorPrimary"
+            app:chipStrokeColor="@color/colorPrimary"/>
 
 
         <com.sasank.roundedhorizontalprogress.RoundedHorizontalProgressBar
-            android:id="@+id/progress_bar_gender"
+            android:id="@+id/progress_bar_age"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="4dp"

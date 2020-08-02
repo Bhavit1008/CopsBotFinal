@@ -1,4 +1,4 @@
-package com.example.newchatui.chat
+package com.example.newchatui.ui.chat
 
 import android.content.Context
 import android.content.Intent
@@ -34,8 +34,8 @@ class ComplaintDetailsActivity : AppCompatActivity() {
         progress_bar_complaintDetails.animateProgress(2000, 90, 100)
         val sharedPreferences = applicationContext!!.getSharedPreferences(sharedName, Context.MODE_PRIVATE)
         if(sharedPreferences!=null){
-            victimName = sharedPreferences.getString("name", "name")
-            age = sharedPreferences.getString("age", "age")
+            victimName = sharedPreferences.getString("name", "anonymous")
+            age = sharedPreferences.getString("age", "anonymous")
             gender = sharedPreferences.getString("gender", "gender")
             category = sharedPreferences.getString("category", "category")
             description = sharedPreferences.getString("description", "description")
@@ -86,6 +86,7 @@ class ComplaintDetailsActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         val intent = Intent(this,DashBoardActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }

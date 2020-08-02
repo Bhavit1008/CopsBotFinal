@@ -1,4 +1,4 @@
-package com.example.newchatui.chat.awarness
+package com.example.newchatui.ui.chat.awarness
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -12,43 +12,50 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="8dp"
-        tools:context=".chat.awarness.MainAwarness">
+        android:layout_margin="4dp"
+        android:background="#fff"
+        tools:context=".ui.chat.awarness.MainAwarness">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:layout_marginLeft="4dp"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/round_edt"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="80dp"
             android:layout_above="@+id/txtCrimeCategory"
             android:layout_height="80dp"
-            app:civ_shadow="true"
-            app:civ_shadow_radius="10dp"
-            app:civ_shadow_color="#fff"
-            android:src="@drawable/police"
             android:id="@+id/botLogo"
             />
 
         <TextView
             android:layout_width="250dp"
+            android:padding="16dp"
             android:layout_height="wrap_content"
+            android:background="@drawable/bot_bg_bubble"
             android:text="For  which category you want information"
             android:id="@+id/txtCrimeCategory"
             android:textSize="24sp"
-            android:layout_marginBottom="32dp"
-            android:layout_above="@id/chipGroupCrimeAwarness"/>
+            android:layout_marginBottom="16dp"
+            android:layout_above="@id/botSug"/>
 
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:padding="16dp"
+            android:layout_above="@+id/chipGroupCrimeAwarness"
+            android:id="@+id/botSug"
+            android:background="@drawable/bot_bg_bubble"/>
 
         <com.google.android.material.chip.ChipGroup
             android:layout_marginBottom="16dp"
             android:layout_above="@+id/dots"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:id="@+id/chipGroupCrimeAwarness"
-            android:background="#fafff7"
+            android:background="#fff"
             app:singleLine="false"
+            android:layout_marginTop="16dp"
             app:singleSelection="true"
-            android:layout_alignParentRight="true"
             app:chipBackgroundColor="#fff"
             app:chipStrokeWidth="1dp"
             app:chipStrokeColor="@color/colorAccent"
@@ -65,7 +72,7 @@
                 app:chipStrokeColor="@color/colorPrimary"
                 />
             <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/chipGreen"
                 android:text="Domestic Violence against Women"
@@ -118,8 +125,8 @@
             app:texts="@array/Fade_In"
             app:timeout="500"
             android:layout_marginBottom="16dp"
-            android:layout_alignParentBottom="true"
             android:textSize="12sp"
+            android:layout_marginTop="4dp"
             android:textColor="#000"
             android:id="@+id/txtlogo"
             />
@@ -143,7 +150,6 @@
             android:layout_marginTop="4dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:layout_marginRight="4dp"
             app:LoadingDots_dots_color="@color/colorPrimary"
             app:LoadingDots_auto_play="true"
